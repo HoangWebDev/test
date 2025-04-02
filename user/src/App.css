@@ -1,0 +1,374 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.light-mode {  
+  color: #333;
+}
+
+.dark-mode {
+  background-color: #222;
+  color: #f5f5f5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.toggle-button { 
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 15px;  
+}
+
+.dark-mode .toggle-button .sun-icon {
+  color: #000;  
+}
+
+.light-mode .toggle-button .moon-icon {
+  color: #000;  
+}
+
+/* File: src/components/UsersTable.css */
+.users-table-container {
+  padding: 20px;
+}
+
+/* Áp dụng kiểu dáng dựa trên chế độ tối/sáng */
+.users-table-container.light-mode {
+  background-color: #ffffff;
+  color: #333333;
+}
+
+.users-table-container.dark-mode {
+  background-color: #333333;
+  color: #f5f5f5;
+}
+
+.filters-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.filter-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.filter-group input,
+.filter-group select {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.dark-mode .filter-group input,
+.dark-mode .filter-group select {
+  background-color: #444;
+  color: #f5f5f5;
+  border-color: #555;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.dark-mode .table-responsive {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.users-table th,
+.users-table td {
+  padding: 12px 15px;
+  text-align: left;
+}
+
+.users-table thead {
+  background-color: #f8f9fa;
+}
+
+.dark-mode .users-table thead {
+  background-color: #444;
+}
+
+.users-table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.users-table tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.dark-mode .users-table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.users-table tbody tr:hover {
+  background-color: rgba(74, 111, 165, 0.1);
+}
+
+.dark-mode .users-table tbody tr:hover {
+  background-color: rgba(74, 111, 165, 0.2);
+}
+
+.users-table th {
+  font-weight: 600;
+  border-bottom: 2px solid #ddd;
+}
+
+.dark-mode .users-table th {
+  border-bottom-color: #555;
+}
+
+.sortable-header {
+  cursor: pointer;
+  user-select: none;
+}
+
+.sortable-header:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .sortable-header:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sort-icon {
+  margin-left: 5px;
+  font-size: 0.8rem;
+}
+
+.email__link{
+  text-decoration: none;
+  color: #000;
+}
+
+.dark-mode .email__link{  
+  color: #ffffff;
+}
+
+.registration-container{
+  position: relative;
+  cursor: pointer;
+}
+
+.registration-container:hover::after{
+  content: attr(title);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  z-index: 1;
+}
+
+.dark-mode .registration-container:hover::after{
+  content: attr(title);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  color: #000000;
+  padding: 5px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  z-index: 1;
+}
+
+.status-btn {
+  padding: 6px 12px;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.dark-mode .edit-btn,
+.dark-mode .delete-btn {
+  color: rgb(255, 255, 255);
+}
+
+.dark-mode .edit-btn:hover,
+.dark-mode .delete-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.pagination-buttons{
+  display: flex;
+  column-gap: 5px;
+}
+
+.pagination-button {
+  padding: 6px 12px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.dark-mode .pagination-button {
+  border-color: #555;
+  color: #f5f5f5;
+}
+
+.pagination-button.active {    
+  border-color: #4a6fa5;
+}
+
+.pagination-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rows-per-page {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.rows-per-page select {
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.dark-mode .rows-per-page select {
+  background-color: #444;
+  color: #f5f5f5;
+  border-color: #555;
+}
+
+.pagination-info {
+  margin-left: 15px;
+  font-size: 14px;
+  color: #666;
+}
+
+.dark-mode .pagination-info {
+  color: #aaa;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+}
+
+.loading-spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top: 4px solid #4a6fa5;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+.dark-mode .loading-spinner {
+  border-color: rgba(255, 255, 255, 0.1);
+  border-top-color: #4a6fa5;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #842029;
+  padding: 12px 15px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.dark-mode .error-message {
+  background-color: #3f1a1d;
+  color: #f5c2c7;
+}
